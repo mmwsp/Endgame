@@ -7,7 +7,7 @@
 ### Used technology:
 C, SDL lib.
 
-### Installation
+### Installation:
 Use make in cloned repo.
 
 To play use  arrows, SPACE - to choose the tower to build, ESC - to leave choosing of tower.
