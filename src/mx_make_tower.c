@@ -21,7 +21,7 @@ tower_t *mx_make_tower(int type, int x, int y) {
    }
    if(type == 2) {
         projectile_t *projectile = (projectile_t *)malloc(sizeof(projectile_t));
-        projectile -> speed = 20;
+        projectile -> speed = 15;
         projectile -> damage = 120;
         projectile -> tex_main_path = "resources/prj3.png";
         
@@ -39,7 +39,7 @@ tower_t *mx_make_tower(int type, int x, int y) {
    }  
    if(type == 3) {
         projectile_t *projectile = (projectile_t *)malloc(sizeof(projectile_t));
-        projectile -> speed = 30;
+        projectile -> speed = 25;
         projectile -> damage = 2000;
         projectile -> tex_main_path = "resources/prj2.png";
         

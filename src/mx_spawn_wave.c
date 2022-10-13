@@ -9,7 +9,7 @@ int mx_spawn_wave(enemy_t **enemies, float *last_spawn_time, float x) {
 	if (x >= 10)
 		cd = 2000;
 	if (x >= 15)
-		cd = 1000;
+		cd = 1500;
 	if ( cd + *last_spawn_time <= SDL_GetTicks() ) {
 		*last_spawn_time = SDL_GetTicks();
 		int ran = rand() % 10;

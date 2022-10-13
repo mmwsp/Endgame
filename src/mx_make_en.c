@@ -6,7 +6,7 @@ enemy_t *mx_make_en(int type, float x) {
        enemy->x = 10;
        enemy->y = 225;
        enemy->health = 1000 * x;
-       enemy->speed = 2;
+       enemy->speed = 1;
        enemy->tex_main_path = "resources/enemy.png";
        return enemy;
    }
@@ -15,7 +15,7 @@ enemy_t *mx_make_en(int type, float x) {
        enemy->x = 10;
        enemy->y = 225;
        enemy->health = 700 * x;
-       enemy->speed = 3;
+       enemy->speed = 1;
        enemy->tex_main_path = "resources/enemy1.png";
        return enemy;
    }  

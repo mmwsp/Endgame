@@ -14,10 +14,7 @@ int mx_game(SDL_Window *window, SDL_Renderer *renderer) {
     for(int i = 0; i < 100; i++) {
         enemies[i] = NULL;
     }
-    //enemies[0] = mx_make_en(1);
-    //
-    //towers[0] = mx_make_tower(1, 285, 375);
-    
+
     int base_health = 10;
     int money = 10;
     int score = 0;
@@ -80,7 +77,6 @@ int mx_game(SDL_Window *window, SDL_Renderer *renderer) {
                         current_ui_y++;
                 }
                 if (SDL_SCANCODE_SPACE == windowEvent.key.keysym.scancode && inner_menu == 0) {
-                    //printf(" %i %i = %i \n", current_ui_x, current_ui_y, arr[current_ui_y][current_ui_x]);
                     if (arr[current_ui_y][current_ui_x] == 1) {
                         inner_menu = 1;
                         current_ts_x = 1;
@@ -118,15 +114,11 @@ int mx_game(SDL_Window *window, SDL_Renderer *renderer) {
                 mod += mod / 3;
                 wave = 0;
             }
-            wave += mx_spawn_wave(enemies, &last_spawn_time, mod + (wave / 20) );
+            wave += mx_spawn_wave(enemies, &last_spawn_time, mod + (wave / 30) );
 
             mx_move_en(enemies);
-        // printf(" %f \n", enemies[0]->health);
             mx_clear_projectiles(projectiles);
             mx_clear_enemies(enemies, &money, &score);
-        /* if (towers[0]->target != NULL) {
-                printf(" ## \n");
-            }*/
 
  
             mx_fire_towers(towers, projectiles, enemies, SDL_GetTicks());
@@ -151,7 +143,8 @@ int mx_game(SDL_Window *window, SDL_Renderer *renderer) {
                 return 1;
             }
             SDL_RenderPresent(renderer); 
-            SDL_Delay(30);
+         // SDL_Delay(5);
+
         }
     }
     //free malloc mem

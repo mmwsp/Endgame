@@ -11,11 +11,8 @@ void mx_fire_towers(tower_t **towers, projectile_t **projectiles, enemy_t **enem
         if (towers[i]->target == NULL) { // if no target 
         
             for (int j = 0; enemies[j] != NULL; j++) { // find enemy
-               // printf("x   %i,  y   %i, \n", enemies[j]->x, enemies[j]->y);
-                //printf("x Tower   %i,  y twr   %i, \n", towers[j]->x, towers[j]->y);
-               // printf(" %f \n", sqrt( pow( (enemies[j]->x * towers[i]->x), 2) + pow( (towers[i]->y * enemies[j]->y), 2) ));
+
                 if (enemies[j]->health > 0 && towers[i]->range >= sqrt( pow( (enemies[j]->x - towers[i]->x), 2) + pow( (enemies[j]->y - towers[i]->y), 2) )) {         
-                //printf(" %f \n",sqrt( pow( (enemies[j]->x - towers[i]->x), 2) + pow( (enemies[j]->y - towers[i]->y), 2) ));
 
                     towers[i]->target = enemies[j];
                 }
@@ -28,7 +25,6 @@ void mx_fire_towers(tower_t **towers, projectile_t **projectiles, enemy_t **enem
 
                 if ( enemies[j]->health > 0 && towers[i]->range >= sqrt( pow( (enemies[j]->x - towers[i]->x), 2) + pow( (enemies[j]->y - towers[i]->y), 2) )) {
 
-                     //printf(" %f \n", sqrt( pow( (enemies[j]->x - towers[i]->x), 2) + pow( (enemies[j]->y - towers[i]->y), 2) ));
                     towers[i]->target = enemies[j];
                 }
             }
@@ -50,8 +46,6 @@ void mx_fire_towers(tower_t **towers, projectile_t **projectiles, enemy_t **enem
 
                 towers[i]->last_fire_time = current_time;
             }
-            //else 
-              //  break;
         }
     }
     
